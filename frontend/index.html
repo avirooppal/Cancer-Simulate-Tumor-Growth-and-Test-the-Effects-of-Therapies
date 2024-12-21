@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Treatment Recommendation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    textarea, input, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+    .response {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+    .treatment-list {
+      margin-top: 20px;
+    }
+    .treatment-item {
+      margin: 5px 0;
+    }
+    .recommended {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Patient Treatment Recommendation</h1>
+    
+    <!-- Add Patient Section -->
+    <h2>Add Patient</h2>
+    <textarea id="patientData" placeholder="Enter patient data as JSON"></textarea>
+    <button onclick="addPatient()">Add Patient</button>
+    <div id="addPatientResponse" class="response"></div>
+
+    <!-- Get Treatment Recommendations Section -->
+    <h2>Get Treatment Recommendations</h2>
+    <input type="text" id="patientId" placeholder="Enter Patient ID (e.g., patient_1)" />
+    <button onclick="getRecommendations()">Get Recommendations</button>
+    <div id="recommendations" class="response"></div>
+
+    <!-- All Treatment Scores Section -->
+    <div id="treatmentScores" class="treatment-list"></div>
+  </div>
+
+  <script>
+    const backendUrl = "http://127.0.0.1:8000"; // Change to your backend URL
+
+    // Function to add patient data
+    async function addPatient() {
+      const patientData = document.getElementById("patientData").value;
+
+      try {
+        const response = await fetch(`${backendUrl}/add_patient/`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: patientData,
+        });
+
+        const result = await response.json();
+        document.getElementById("addPatientResponse").innerText = JSON.stringify(result, null, 2);
+      } catch (error) {
+        document.getElementById("addPatientResponse").innerText = `Error: ${error}`;
+      }
+    }
+
+    // Function to get treatment recommendations
+    async function getRecommendations() {
+      const patientId = document.getElementById("patientId").value;
+
+      try {
+        const response = await fetch(`${backendUrl}/recommend_treatments/${patientId}`, {
+          method: "GET",
+        });
+
+        const result = await response.json();
+
+        if (result && result.recommended_treatments && result.recommended_treatments.length > 0) {
+          // Find the treatment with the highest score
+          const bestTreatment = result.recommended_treatments.reduce((best, current) =>
+            current[1] > best[1] ? current : best
+          );
+
+          // Display the recommended treatment
+          document.getElementById("recommendations").innerHTML = `
+            <strong>Recommended Treatment:</strong> <span class="recommended">${bestTreatment[0]}</span><br>
+            <strong>Score:</strong> ${bestTreatment[1]}
+          `;
+
+          // Display all treatments and scores
+          const treatmentList = result.recommended_treatments.map(treatment => {
+            return `
+              <div class="treatment-item">
+                <strong>${treatment[0]}:</strong> ${treatment[1]}
+              </div>
+            `;
+          }).join('');
+
+          document.getElementById("treatmentScores").innerHTML = `
+            <h3>All Treatment Scores:</h3>
+            ${treatmentList}
+          `;
+        } else {
+          document.getElementById("recommendations").innerText = "No recommendation found.";
+        }
+      } catch (error) {
+        document.getElementById("recommendations").innerText = `Error: ${error}`;
+      }
+    }
+  </script>
+</body>
+</html>

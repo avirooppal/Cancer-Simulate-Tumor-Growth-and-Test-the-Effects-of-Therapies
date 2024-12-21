@@ -1,0 +1,51 @@
+Key Parameters and Health Metrics
+Age:
+Patients must generally be adults (18 years or older).
+Sex:
+Gender may influence eligibility based on specific cancer types and treatments.
+Medical History:
+Prior Treatments: Information about previous cancer therapies received, including types and outcomes.
+Concurrent Malignancies: Presence of other active cancers can affect eligibility.
+Current Health Status:
+Performance Status: Assessment of the patient's overall health and ability to perform daily activities, often measured using scales like the Eastern Cooperative Oncology Group (ECOG) performance status.
+Organ Function: Adequate function of vital organs is essential, typically assessed by:
+Absolute Neutrophil Count (ANC) > 1,500 cells/mm³
+Platelets > 100,000 cells/mm³
+Total Bilirubin < 1.5 times the upper limit of normal (ULN)
+Aspartate Aminotransferase (AST) / Alanine Aminotransferase (ALT) < 2.5 to 3 times ULN
+Creatinine < 1.5 times ULN or creatinine clearance > 60 mL/min.
+Disease Characteristics:
+Type of Cancer: Specific cancer types are critical in determining treatment eligibility.
+Stage of Cancer: The stage can dictate whether a patient is suitable for certain treatments.
+Measurable Disease: For certain studies, patients must have measurable or evaluable disease to assess treatment response.
+Comorbid Conditions:
+Presence of uncontrolled intercurrent illnesses (e.g., cardiovascular diseases) may exclude patients from trials due to increased risk during treatment.
+Laboratory Test Results:
+Recent laboratory tests confirming adequate organ function and other health metrics are required.
+Vital Signs:
+Monitoring of blood pressure, heart rate, respiratory rate, and temperature to ensure stability.
+Nutritional Status:
+Assessment of weight loss or malnutrition that may affect treatment tolerance.
+Psychosocial Factors:
+Evaluation of mental health status and support systems that may impact treatment adherence and outcomes.,,Health Metrics for Laboratory Test Results
+Complete Blood Count (CBC):
+Absolute Neutrophil Count (ANC): Must be > 1,500 cells/mm³.
+Platelet Count: Must be > 100,000 cells/mm³.
+Hemoglobin Levels: Important for assessing anemia.
+Liver Function Tests:
+Total Bilirubin: Must be < 1.5 times the institutional upper limit of normal (ULN).
+Aspartate Aminotransferase (AST) / Alanine Aminotransferase (ALT): Must be < 2.5 to 3 times ULN.
+Renal Function Tests:
+Creatinine Levels: Must be < 1.5 times ULN or creatinine clearance must be > 60 mL/min.
+Electrolyte Levels:
+Monitoring of electrolytes such as sodium, potassium, and calcium to ensure metabolic stability.
+Tumor Markers:
+Specific markers relevant to the type of cancer being treated (e.g., Alpha-fetoprotein for liver cancer, CA-125 for ovarian cancer).
+Coagulation Profile:
+Assessing parameters like prothrombin time (PT) and activated partial thromboplastin time (aPTT) to evaluate bleeding risk.
+Serum Protein Levels:
+Including albumin levels, which can indicate nutritional status and liver function.
+Immunoglobulin Levels:
+Useful in assessing conditions like multiple myeloma.
+Other Specific Tests:
+Depending on the type of cancer, additional tests may include hormone levels (e.g., beta-human chorionic gonadotropin for germ cell tumors) and specific biomarkers related to the disease.
